@@ -412,33 +412,7 @@ Returns the full election result breakdown, **position by position**, including:
 
 ---
 
-# 🔍 **CandidateResultSerializer — What Frontend Receives**
 
-```json
-{
-  "id": 14,
-  "student": {
-    "id": 2034,
-    "registration_number": "201812345",
-    "full_name": "John Doe",
-    "level": "300",
-    "faculty": "Social Sciences",
-    "department": "Political Science",
-    "image": "https://nau-slc.s3.eu-west-2.amazonaws.com/media/student_images/201812345.png"
-  },
-  "vote_count": 1200,
-  "winner": true
-}
-```
-
-### **Field Explanation**
-
-| Field        | Type    | Description                                     |
-| ------------ | ------- | ----------------------------------------------- |
-| `id`         | integer | Candidate ID                                    |
-| `student`    | object  | Full student info (name, dept, image, etc.)     |
-| `vote_count` | integer | Number of votes the candidate received          |
-| `winner`     | boolean | `true` only if they have the highest vote count |
 
 
 
