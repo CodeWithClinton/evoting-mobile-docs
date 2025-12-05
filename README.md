@@ -412,6 +412,97 @@ Returns the full election result breakdown, **position by position**, including:
 
 ---
 
+# 🗳️ **10️⃣ Get Electoral Candidates (Positions + Candidates in an Election)**
+
+### **GET** `/get_electoral_candidates/<election_id>/`
+
+Returns **all positions in an election**, along with **every candidate contesting in each position**:
+
+
+### **Auth Required:** ✅ Yes (IsAuthenticated)
+---
+
+## ✔️ **Sample Success Response**
+
+```json
+{
+  "id": 10,
+  "title": "SUG Election 2024/2025",
+  "positions": [
+    {
+      "id": 1,
+      "name": "President",
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "id": 120,
+          "position": "President",
+          "status": "approved",
+          "student": {
+            "id": 3011,
+            "registration_number": "201812345",
+            "full_name": "John Doe",
+            "level": "300",
+            "faculty": "Social Sciences",
+            "department": "Political Science",
+            "image": "https://nau-slc.s3.eu-west-2.amazonaws.com/media/student_images/201812345.png"
+          }
+        },
+        {
+          "id": 121,
+          "position": "President",
+          "status": "approved",
+          "student": {
+            "id": 3220,
+            "registration_number": "201856700",
+            "full_name": "Mary Okafor",
+            "level": "300",
+            "faculty": "Law",
+            "department": "Public Law",
+            "image": "https://nau-slc.s3.eu-west-2.amazonaws.com/media/student_images/201856700.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Vice President",
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "id": 140,
+          "position": "Vice President",
+          "status": "approved",
+          "student": {
+            "id": 3778,
+            "registration_number": "201900112",
+            "full_name": "Kelvin James",
+            "level": "400",
+            "faculty": "Education",
+            "department": "Educational Management",
+            "image": "https://nau-slc.s3.eu-west-2.amazonaws.com/media/student_images/201900112.png"
+          }
+        }
+      ]
+    }
+  ],
+  "position_count": 2,
+  "total_candidates": 3
+}
+```
+
+---
+
+## ❌ **Sample Error Response (Election Not Found)**
+
+```json
+{
+  "error": "Election not found"
+}
+```
+
+Status Code: **404**
+
 
 
 
